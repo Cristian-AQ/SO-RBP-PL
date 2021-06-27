@@ -19,10 +19,12 @@ Secuencia=[]
 TSalida=[] #Tiempo de salida
 TPermanencia=[] #Tiempo de permanencia
 
-modulos1.Desasignacion(NroProcesos,Tllegada,TTotal,Duracion,prioridad,Secuencia)
+modulos1.DesasignacionRRB(NroProcesos,Tllegada,TTotal,Duracion,prioridad,Secuencia)
+#modulos1.DesasignacionPLL(NroProcesos,Tllegada,TTotal,Duracion,Secuencia)
 
 print("Secuencia:")                    
 print(Secuencia)
 Secuencia.reverse()
 
-modulos1.mostrar(NroProcesos,Secuencia,TTotal,TSalida,Tllegada,TPermanencia,DuracionProceso,prioridad)
+modulos1.mostrarRRB(NroProcesos,Secuencia,TTotal,TSalida,Tllegada,TPermanencia,DuracionProceso,prioridad)
+#modulos1.mostrarPLL(NroProcesos,Secuencia,TTotal,TSalida,Tllegada,TPermanencia,DuracionProceso)
