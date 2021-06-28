@@ -1,3 +1,8 @@
+from tkinter import *
+from tkinter import filedialog,ttk
+raiz = Tk()
+raiz.geometry('900x600+0+0')
+Label(raiz,text='NO CERRAR ESTA VENTANA, EL BOTON PUEDE ESTAR DETRAS DE ESTA VENTANA',bg='red',font='arial',fg='white').pack()
 def CrearProceso(PID,CantidadProcesos,llegada,duracionProceso,duracion,prioridad):
     for i in range(PID):
         CantidadProcesos[i]=list(CantidadProcesos[i].split(','))
@@ -30,6 +35,8 @@ def DesasignacionRRB(PID,Tllegada,TTotal,duracion,prioridad,secuencia):
                         p=p+1
 
 def mostrarRRB(PID,Secuencia,TTotal,TSalida,Tllegada,TPermanencia,DuracionProceso,prioridad):
+    Label(raiz,text='PROCESOS ROUND ROBIN CON PRIORIDADES',bg='blue',font='arial',fg='white').pack()
+    material = Listbox(raiz,width=150)
     for i in range(PID):
         nro=Secuencia.index(f"P{i+1}")+1
         nro=TTotal+1-nro
@@ -38,7 +45,9 @@ def mostrarRRB(PID,Secuencia,TTotal,TSalida,Tllegada,TPermanencia,DuracionProces
         TPermanencia.append(nro)
     
     for i in range(PID): 
-        print(f"P{i+1}" , f"--> Tiempo de llegada: {Tllegada[i]}", f"-- Duracion: {DuracionProceso[i]}", f"-- Prioridad: {prioridad[i]}", f"-- Tiempo de Salida: {TSalida[i]}",f"-- Tiempo de Permanencia: {TPermanencia[i]}" )
+        material.insert(i,f"P{i+1}--> Tiempo de llegada: {Tllegada[i]}--> Duracion: {DuracionProceso[i]}--> Prioridad: {prioridad[i]}--> Tiempo de Salida: {TSalida[i]}--> Tiempo de Permanencia: {TPermanencia[i]}")
+        #print(f"P{i+1}" , f"--> Tiempo de llegada: {Tllegada[i]}", f"-- Duracion: {DuracionProceso[i]}", f"-- Prioridad: {prioridad[i]}", f"-- Tiempo de Salida: {TSalida[i]}",f"-- Tiempo de Permanencia: {TPermanencia[i]}" )
+    material.place(x=10,y=150)
 
 def DesasignacionPLL(PID,Tllegada,TTotal,duracion,secuencia):
     p=0
@@ -52,6 +61,8 @@ def DesasignacionPLL(PID,Tllegada,TTotal,duracion,secuencia):
                         p=p+1
 
 def mostrarPLL(PID,Secuencia,TTotal,TSalida,Tllegada,TPermanencia,DuracionProceso):
+    Label(raiz,text='PRIMERO EN LLEGAR, PRIMERO EN ATENDERCE',bg='yellow',font='arial').pack()
+    material = Listbox(raiz,width=150)
     for i in range(PID):
         nro=Secuencia.index(f"P{i+1}")
         nro=TTotal-nro
@@ -59,5 +70,7 @@ def mostrarPLL(PID,Secuencia,TTotal,TSalida,Tllegada,TPermanencia,DuracionProces
         nro=nro-Tllegada[i]
         TPermanencia.append(nro)
         
-    for i in range(PID): 
-        print(f"P{i+1}" , f"--> Tiempo de llegada: {Tllegada[i]}", f"-- Duracion: {DuracionProceso[i]}",  f"-- Tiempo de Salida: {TSalida[i]}",f"-- Tiempo de Permanencia: {TPermanencia[i]}" )
+    for i in range(PID):
+        material.insert(i,f"P{i+1}--> Tiempo de llegada: {Tllegada[i]}--> Duracion: {DuracionProceso[i]}--> Tiempo de Salida: {TSalida[i]}--> Tiempo de Permanencia: {TPermanencia[i]}")
+        #print(f"P{i+1}" , f"--> Tiempo de llegada: {Tllegada[i]}", f"-- Duracion: {DuracionProceso[i]}",  f"-- Tiempo de Salida: {TSalida[i]}",f"-- Tiempo de Permanencia: {TPermanencia[i]}" )
+    material.place(x=10,y=150)

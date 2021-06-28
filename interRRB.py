@@ -4,8 +4,8 @@ import modulos1
 import interPLL
 raiz = Tk()
 
-frame = Frame(raiz,width=1250,height=480)  
-frame.pack()      
+#frame = Frame(raiz,width=1250,height=480)  
+#frame.pack()      
 
 def abrirArchivo():
     archivo=filedialog.askopenfile(title='abrir')
@@ -37,6 +37,6 @@ def abrirArchivo():
     modulos1.mostrarRRB(NroProcesos,Secuencia,TTotal,TSalida,Tllegada,TPermanencia,DuracionProceso,prioridad)
     #modulos1.mostrarPLL(NroProcesos,Secuencia,TTotal,TSalida,Tllegada,TPermanencia,DuracionProceso)
 
-Button(raiz,text='ROUNDROBIN',command=abrirArchivo).pack()
+Button(raiz,text='ROUNDROBIN CON PRIORIDAD',command=abrirArchivo).pack()
 Button(raiz,text='PRIMERO EN LLEGAR',command=interPLL.abrirArchivo).pack()
 raiz.mainloop()
