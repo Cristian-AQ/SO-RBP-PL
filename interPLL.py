@@ -1,4 +1,3 @@
-#from tkinter import *
 from tkinter import filedialog,ttk
 import modulos1
 

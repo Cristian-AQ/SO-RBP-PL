@@ -46,7 +46,6 @@ def mostrarRRB(PID,Secuencia,TTotal,TSalida,Tllegada,TPermanencia,DuracionProces
     
     for i in range(PID): 
         material.insert(i,f"P{i+1}--> Tiempo de llegada: {Tllegada[i]}--> Duracion: {DuracionProceso[i]}--> Prioridad: {prioridad[i]}--> Tiempo de Salida: {TSalida[i]}--> Tiempo de Permanencia: {TPermanencia[i]}")
-        #print(f"P{i+1}" , f"--> Tiempo de llegada: {Tllegada[i]}", f"-- Duracion: {DuracionProceso[i]}", f"-- Prioridad: {prioridad[i]}", f"-- Tiempo de Salida: {TSalida[i]}",f"-- Tiempo de Permanencia: {TPermanencia[i]}" )
     material.place(x=10,y=150)
 
 def DesasignacionPLL(PID,Tllegada,TTotal,duracion,secuencia):
@@ -72,5 +71,4 @@ def mostrarPLL(PID,Secuencia,TTotal,TSalida,Tllegada,TPermanencia,DuracionProces
         
     for i in range(PID):
         material.insert(i,f"P{i+1}--> Tiempo de llegada: {Tllegada[i]}--> Duracion: {DuracionProceso[i]}--> Tiempo de Salida: {TSalida[i]}--> Tiempo de Permanencia: {TPermanencia[i]}")
-        #print(f"P{i+1}" , f"--> Tiempo de llegada: {Tllegada[i]}", f"-- Duracion: {DuracionProceso[i]}",  f"-- Tiempo de Salida: {TSalida[i]}",f"-- Tiempo de Permanencia: {TPermanencia[i]}" )
     material.place(x=10,y=150)
